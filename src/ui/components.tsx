@@ -1,0 +1,4 @@
+import {cloneElement,isValidElement,useId,type ReactNode,type ReactElement} from 'react';
+export function Notice({tone='info',title,children}:{tone?:'info'|'success'|'warning'|'blocked'|'offline'|'loading'|'empty';title:string;children?:ReactNode}) {return <div className={'notice '+tone} role={tone==='blocked'?'alert':'status'}><strong>{title}</strong>{children&&<p>{children}</p>}</div>}
+export function Field({label,children}:{label:string;children:ReactNode}) {const id=useId();return <div className="field"><label htmlFor={id}>{label}</label>{isValidElement(children)?cloneElement(children as ReactElement<any>,{id}):children}</div>}
+export function Action({children,onClick,disabled=false}:{children:ReactNode;onClick:()=>void;disabled?:boolean}) {return <button className="primary touch-action" onClick={onClick} disabled={disabled}>{children}</button>}

@@ -1,0 +1,39 @@
+.command-intelligence{max-width:1120px;margin:6px auto 0;color:#173e40}
+.command-intelligence .ci-heading{margin-bottom:24px}
+.command-intelligence .ci-eyebrow{font-size:10px;font-weight:700;letter-spacing:.14em;color:#517c72}
+.command-intelligence .ci-heading h2{font-size:30px;letter-spacing:-.7px;margin:8px 0}
+.command-intelligence .ci-heading p{font-size:14px;color:#617b75;margin:0;line-height:1.7}
+.command-intelligence .ci-prompt{background:#12343c;border-radius:14px;padding:24px;color:white}
+.command-intelligence .ci-prompt label{display:block;font-size:13px;font-weight:600;margin-bottom:13px}
+.command-intelligence .ci-input-row{display:flex;gap:10px}
+.command-intelligence .ci-input-row input{flex:1;min-width:0;width:100%;background:#ffffff0d;border:1px solid #ffffff40;border-radius:9px;padding:15px;color:white;font-size:14px;min-height:50px}
+.command-intelligence .ci-input-row input::placeholder{color:#b4c9c7}
+.command-intelligence .ci-input-row button{border:0;border-radius:9px;background:#b1dfcd;color:#123f34;padding:0 24px;font-size:14px;font-weight:700;white-space:nowrap}
+.command-intelligence .ci-suggestions{margin:23px 0 28px}
+.command-intelligence .ci-suggestions>p{font-size:12px;color:#617b75;margin:0 0 11px}
+.command-intelligence .ci-suggestions>div{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.command-intelligence .ci-suggestions button{display:grid;grid-template-columns:1fr 18px;gap:7px 16px;text-align:left;background:white;border:1px solid #d7e4de;border-radius:10px;padding:17px 18px;color:#204b46;transition:border-color .15s,background .15s}
+.command-intelligence .ci-suggestions button>span{grid-column:1;font-size:9px;letter-spacing:.1em;font-weight:700;color:#668477}
+.command-intelligence .ci-suggestions strong{grid-column:1;font-size:13px;line-height:1.65;font-weight:600}
+.command-intelligence .ci-suggestions i{grid-column:2;grid-row:1/3;align-self:center;font-size:18px;font-style:normal;color:#538575}
+.command-intelligence .ci-suggestions button:hover,.command-intelligence .ci-suggestions button[aria-pressed=true]{background:#edf6f1;border-color:#6eac97}
+.command-intelligence button:focus-visible,.command-intelligence input:focus-visible{outline:2px solid #5fb6a2;outline-offset:3px}
+.command-intelligence .ci-answer{background:white;border:1px solid #d7e4de;border-radius:14px;padding:28px;box-shadow:0 4px 22px #173e4005}
+.command-intelligence .ci-answer-top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.command-intelligence .ci-answer-top>span:last-child{color:#73867f;font-size:11px}
+.command-intelligence .ci-asked{color:#617b75;font-size:12px;line-height:1.7;margin:20px 0 8px}
+.command-intelligence .ci-answer h3{font-size:24px;font-weight:600;letter-spacing:-.4px;line-height:1.4;max-width:800px;margin:0 0 12px}
+.command-intelligence .ci-summary{font-size:14px;line-height:1.85;color:#4c6961;max-width:900px;margin:0}
+.command-intelligence .ci-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin:25px 0;padding:22px 0;border-top:1px solid #e3ece7;border-bottom:1px solid #e3ece7;gap:20px}
+.command-intelligence .ci-metrics strong{display:block;font-size:30px;letter-spacing:-.6px;color:#175e4b;font-weight:650}
+.command-intelligence .ci-metrics span{display:block;font-size:11px;line-height:1.6;color:#617b75;margin-top:7px}
+.command-intelligence .ci-detail{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:30px;align-items:start}
+.command-intelligence .ci-detail h4{font-size:13px;margin:0 0 12px;font-weight:700}
+.command-intelligence .ci-detail ul{margin:0;padding-left:18px}
+.command-intelligence .ci-detail li{font-size:13px;line-height:1.85;color:#4c6961;padding-left:3px;margin-bottom:12px}
+.command-intelligence .ci-detail aside{border-radius:10px;padding:20px;background:#f0f7f3;border:1px solid #e0ebe4}
+.command-intelligence .ci-detail aside p{font-size:13px;line-height:1.85;color:#426758;margin:0}
+.command-intelligence .ci-note{font-size:11px;line-height:1.8;color:#73867f;border-top:1px solid #e3ece7;padding-top:17px;margin:22px 0 0}
+.command-intelligence .ci-message{font-size:13px;line-height:1.7;color:#4c6961}
+@media(max-width:760px){.command-intelligence .ci-suggestions>div,.command-intelligence .ci-detail{grid-template-columns:1fr}.command-intelligence .ci-prompt,.command-intelligence .ci-answer{padding:20px}.command-intelligence .ci-answer h3{font-size:21px}.command-intelligence .ci-input-row button{padding:0 16px}.command-intelligence .ci-metrics{gap:12px}.command-intelligence .ci-metrics strong{font-size:25px}}
+@media(max-width:420px){.command-intelligence .ci-input-row{flex-direction:column}.command-intelligence .ci-input-row button{min-height:44px}.command-intelligence .ci-metrics{grid-template-columns:1fr}.command-intelligence .ci-metrics>div{display:flex;align-items:center;gap:14px}.command-intelligence .ci-metrics span{margin:0}}

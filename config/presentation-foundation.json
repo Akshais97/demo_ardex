@@ -1,0 +1,57 @@
+{
+  "version": "1.0.0",
+  "status": "PROPOSED_INTERNAL_FOUNDATION",
+  "presentationImplementation": "CONNECTED_LOCAL_PROTOTYPE",
+  "runtimeActivation": false,
+  "sourceDocument": "../../build/foundation/presentation/STORY-AND-PILOT.md",
+  "story": {
+    "customer": {"name": "Ananya Rao", "city": "Bengaluru", "locality": "Indiranagar", "fictional": true},
+    "applicator": {"name": "Ravi Kumar", "fictional": true},
+    "dealer": {"name": "Akshaya Building Supplies", "fictional": true},
+    "areaType": "TERRACE",
+    "packageCode": "TERRACE_SHIELD_PLUS",
+    "referenceMeasurement": {"unit": "FT", "length": 30, "width": 20, "upturn": 1, "floorSqft": 600, "perimeterFt": 100, "treatedSqft": 700},
+    "referenceQuote": {"currency": "INR", "materialPaise": 5014000, "labourPaise": 1680000, "totalPaise": 6694000, "illustrative": true, "deriveAtRuntimeFromApprovedCatalog": true},
+    "exception": {"type": "WRONG_SKU", "implemented": true, "resolution": ["Record rejected scan", "Request correct product from tagged dealer", "Record replacement handoff", "Scan registered eligible replacement", "Reviewer records removal and relevant replacement", "Retain original rejection"]},
+    "chapters": [
+      {"id": "enquiry", "title": "Enquiry", "focus": "homeowner", "question": "Can the enquiry become a useful next step?"},
+      {"id": "inspection", "title": "Inspection", "focus": "applicator", "question": "Does the system follow the site condition?"},
+      {"id": "decision", "title": "Decision", "focus": "homeowner", "question": "Does the customer understand the accepted scope?"},
+      {"id": "supply", "title": "Supply", "focus": "dealer", "question": "Does the specification reach the supplier accurately?"},
+      {"id": "exception", "title": "Exception", "focus": "connected", "question": "What happens when someone makes a mistake?"},
+      {"id": "completion", "title": "Completion", "focus": "connected", "question": "What evidence supports handover?"},
+      {"id": "outcome", "title": "Outcome", "focus": "job-summary", "question": "Can the brand trace the business result?"}
+    ]
+  },
+  "pilot": {
+    "approved": false,
+    "city": "Bengaluru",
+    "propertyScope": ["EXPOSED_RESIDENTIAL_TERRACE"],
+    "candidatePackageCodes": ["TERRACE_SHIELD", "TERRACE_SHIELD_PLUS"],
+    "requiresTechnicalApproval": true,
+    "acceptedVisitTarget": 20,
+    "guaranteedCompletedJobs": null,
+    "applicatorCount": 5,
+    "dealerCount": 2,
+    "operationsOwnerCount": 1,
+    "technicalReviewerCount": 1,
+    "recruitmentWeeksAfterReadiness": 6,
+    "reviewAfterAcceptedVisits": 5,
+    "aftercareDays": [30, 90],
+    "paymentRouteProposal": "DIRECT_TO_APPLICATOR_WITH_SEPARATE_ACKNOWLEDGEMENTS",
+    "warrantyPolicyApproved": false,
+    "defaultRecordUntilWarrantyPolicyApproval": "COMPLETION_RECORD",
+    "excludedUntilClearance": ["STRUCTURAL_CONCERN", "INCOMPATIBLE_SUBSTRATE", "UNAPPROVED_REMEDIAL_WORK"],
+    "deferred": ["AI_AUTO_PASS_PHOTOS", "AUTOMATIC_QUALITY_ROUTING", "REWARDS_REDEMPTION", "AD_PLATFORM_WRITEBACKS", "INTEGRATED_PAYOUTS", "CLAIMS_AUTOMATION"],
+    "proposedTargets": {"productLinkedCompletionsPercent": 100, "issuanceWithMissingMandatoryChecksCount": 0, "unresolvedBlockingExceptionsAtIssuanceCount": 0, "medianAddedApplicatorAdminMinutes": 15},
+    "conversionTarget": null,
+    "baselineRequired": true,
+    "incrementalSalesEstablished": false
+  },
+  "authority": {
+    "aiAssistance": ["ENQUIRY_SUMMARY", "GUIDED_QUESTIONS", "APPROVED_SCOPE_EXPLANATION", "SUPPORT_HANDOFF"],
+    "approvedRules": ["PACKAGE_ELIGIBILITY", "QUANTITIES", "PACK_OPTIMISATION", "SKU_MATCH", "REUSE_CHECK", "STAGE_TIMING", "ISSUANCE_GATE"],
+    "humanDecision": ["FINAL_DIAGNOSIS", "TECHNICAL_EXCEPTIONS", "PHOTO_ASSESSMENT", "CORRECTION_REVIEW", "POLICY_APPROVAL"]
+  }
+}
+

@@ -1,0 +1,13 @@
+import fs from 'node:fs';import path from 'node:path';import {createHash}from 'node:crypto';import {DatabaseSync}from 'node:sqlite';
+const root=path.resolve(import.meta.dirname,'..');const target=path.join(root,'release','ardex-pro-v0.3.0');
+if(fs.existsSync(target))throw Error('Release directory exists; choose a new version rather than overwriting it.');
+fs.mkdirSync(target,{recursive:true});
+for(const name of ['dist','server','src/domain','src/data','config'])fs.cpSync(path.join(root,name),path.join(target,name),{recursive:true});
+fs.mkdirSync(path.join(target,'scripts'),{recursive:true});fs.copyFileSync(path.join(root,'scripts/serve-release.mjs'),path.join(target,'scripts/serve-release.mjs'));
+for(const name of ['README.md','DEMO-RUNBOOK.md','PRODUCTION-HANDOFF.md','RELEASE-ACCEPTANCE.md'])fs.copyFileSync(path.join(root,name),path.join(target,name));
+fs.mkdirSync(path.join(target,'.runtime'),{recursive:true});
+const source=new DatabaseSync(path.join(root,'.runtime/ardex-demo.sqlite'));source.exec('PRAGMA busy_timeout=5000');source.prepare('VACUUM INTO ?').run(path.join(target,'.runtime/ardex-demo.sqlite'));source.close();
+const snapshot=new DatabaseSync(path.join(target,'.runtime/ardex-demo.sqlite'));snapshot.exec('DELETE FROM auth; PRAGMA journal_mode=DELETE');snapshot.close();
+fs.writeFileSync(path.join(target,'START-DEMO.cmd'),'@echo off\r\ncd /d "%~dp0"\r\nnode scripts/serve-release.mjs\r\npause\r\n');
+const files=[];function walk(dir){for(const entry of fs.readdirSync(dir,{withFileTypes:true})){const file=path.join(dir,entry.name);if(entry.isDirectory())walk(file);else files.push({path:path.relative(target,file).replaceAll('\\','/'),bytes:fs.statSync(file).size,sha256:createHash('sha256').update(fs.readFileSync(file)).digest('hex')});}}walk(target);
+fs.writeFileSync(path.join(target,'release-manifest.json'),JSON.stringify({version:'0.3.0',createdAt:new Date().toISOString(),runtime:'Node 26.7+',demoOnly:true,sessionTokensRemoved:true,files},null,2));console.log(target+' — '+files.length+' verified files');

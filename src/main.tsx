@@ -1,0 +1,1 @@
+import {createRoot}from 'react-dom/client';import {App}from './ui/App';import {Auth}from './ui/Auth';import './ui/styles.css';createRoot(document.getElementById('root')!).render(<Auth>{(user,logout)=><App user={user} logout={logout}/>}</Auth>);

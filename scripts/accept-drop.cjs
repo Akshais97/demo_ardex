@@ -1,0 +1,10 @@
+// Run only after the named drop's checks have passed. Preserve other drop statuses.
+const fs=require('node:fs'); const path=require('node:path');
+const [drop, summary]=process.argv.slice(2); if(!/^P[123]-D0[1-8]$/.test(drop)||!summary)throw Error('Drop and evidence summary required');
+const root=path.resolve(__dirname,'..');const planning=path.resolve(root,'../build');
+const csvLine=line=>line.match(/("(?:[^"]|"")*"|[^,]*)(,|$)/g).filter(x=>x!== '').map(x=>x.replace(/,$/,'').replace(/^"|"$/g,'').replace(/""/g,'"'));
+function update(file,edit){const lines=fs.readFileSync(file,'utf8').replace(/^\uFEFF/,'').trim().split(/\r?\n/);const head=csvLine(lines.shift());const rows=lines.map(line=>Object.fromEntries(csvLine(line).map((v,i)=>[head[i],v])));edit(rows);fs.writeFileSync(file,[head,...rows.map(r=>head.map(k=>r[k]||''))].map(r=>r.map(v=>'"'+v.replaceAll('"','""')+'"').join(',')).join('\r\n')+'\r\n');}
+const evidence=`evidence/${drop}.md`;fs.writeFileSync(path.join(root,evidence),`# ${drop} implementation review\n\nDate: 2026-10-03.\n\n${summary}\n\nPrototype only. Illustrative technical and commercial policies are not approved by Ardex.\n`);
+update(path.join(planning,'drop-tracker.csv'),rows=>{const index=rows.findIndex(r=>r.drop===drop);if(index<0||index>0&&rows[index-1].status!=='Accepted')throw Error('Previous drop is not accepted');Object.assign(rows[index],{status:'Accepted',started:'2026-10-03',accepted:'2026-10-03',evidence:'../ardex-pro-demo/'+evidence,next_action:rows[index+1]?.drop||'Release review'});});
+update(path.join(planning,'requirements.csv'),rows=>rows.filter(r=>r.drop===drop).forEach(r=>r.status='Accepted'));
+let history=[];const historyPath=path.join(root,'evidence/accepted-drops.json');if(fs.existsSync(historyPath))history=JSON.parse(fs.readFileSync(historyPath));if(!history.some(r=>r.drop===drop))history.push({drop,date:'2026-10-03',evidence});fs.writeFileSync(historyPath,JSON.stringify(history,null,2));console.log(drop+' accepted with evidence');

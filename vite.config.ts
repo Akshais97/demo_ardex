@@ -1,0 +1,1 @@
+import {defineConfig}from 'vite';import path from 'node:path';export default defineConfig({server:{proxy:{'/api':'http://127.0.0.1:5174'}},preview:{proxy:{'/api':'http://127.0.0.1:5174'}},build:{rollupOptions:{input:{app:path.resolve('index.html'),admin:path.resolve('admin.html'),passport:path.resolve('passport.html')}}}});

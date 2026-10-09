@@ -1,0 +1,663 @@
+{
+  "version": "0.3.0",
+  "drop": "P1-D01",
+  "reviewedOn": "2026-10-03",
+  "environment": "demo",
+  "sourcePrecedence": [
+    "Explicit user decisions",
+    "Reviewed roadmap clarifications",
+    "ARDEX PRO v1.0",
+    "Companion contracts reconciled with prose",
+    "Original base specification",
+    "PLAN and PROOF concepts",
+    "Campaign and research context"
+  ],
+  "sources": [
+    {
+      "id": "pro",
+      "path": "pitch_product_03/ARDEX PRO - Product & Technical Specification v1.0.docx",
+      "authority": "Detailed supplied product baseline"
+    },
+    {
+      "id": "base",
+      "path": "Ardex Applicator App — Prototype Feature Spec.pdf",
+      "authority": "Original applicator requirements"
+    },
+    {
+      "id": "plan",
+      "path": "pitch_product_02/ARDEX PLAN - Product Concept & Build Spec.docx",
+      "authority": "Embedded diagnosis and quotation concept"
+    },
+    {
+      "id": "proof",
+      "path": "pitch_product_01/ARDEX PROOF - Product Concept & Build Spec.docx",
+      "authority": "Embedded execution evidence concept"
+    },
+    {
+      "id": "campaign",
+      "path": "Ardex Endura- Waterproofing Campaign Brief.pdf",
+      "authority": "Campaign emotional promise and stakeholder scope"
+    },
+    {
+      "id": "seed",
+      "path": "pitch_product_03/seed-config.json",
+      "authority": "Illustrative operational configuration"
+    },
+    {
+      "id": "api",
+      "path": "pitch_product_03/openapi.yaml",
+      "authority": "Supplied future API contract"
+    },
+    {
+      "id": "schema",
+      "path": "pitch_product_03/schema.sql",
+      "authority": "Supplied future data contract"
+    },
+    {
+      "id": "roadmap",
+      "path": "ChatGPT/build/MASTER-ROADMAP.md",
+      "authority": "Proposed demo scope and implementation sequence"
+    }
+  ],
+  "capabilities": [
+    {
+      "id": "lead-inbox",
+      "title": "Booked site visit inbox",
+      "owner": "Sakhaa",
+      "consumer": "Applicator",
+      "demoMode": "working-domain",
+      "status": "Service live",
+      "drop": "P2-D02",
+      "sourceRefs": [
+        {
+          "id": "pro",
+          "locator": "7.1 and M3"
+        }
+      ],
+      "label": "Working local demo: Booked site visit inbox",
+      "evidence": "evidence/P2-D02.md"
+    },
+    {
+      "id": "my-lead",
+      "title": "Owned customer creation",
+      "owner": "Applicator",
+      "consumer": "ARDEX PRO",
+      "demoMode": "working-domain",
+      "status": "Service live",
+      "drop": "P2-D03",
+      "sourceRefs": [
+        {
+          "id": "pro",
+          "locator": "5.2 and M4"
+        }
+      ],
+      "label": "Working local demo: Owned customer creation",
+      "evidence": "evidence/P2-D03.md"
+    },
+    {
+      "id": "diagnosis",
+      "title": "Field diagnosis and structural stop",
+      "owner": "Applicator",
+      "consumer": "PLAN rules",
+      "demoMode": "working-domain",
+      "status": "Service live",
+      "drop": "P2-D04",
+      "sourceRefs": [
+        {
+          "id": "pro",
+          "locator": "7.2"
+        }
+      ],
+      "label": "Working local demo: Field diagnosis and structural stop",
+      "evidence": "evidence/P2-D04.md"
+    },
+    {
+      "id": "calculator",
+      "title": "Area coverage and cheapest covering packs",
+      "owner": "ARDEX PRO",
+      "consumer": "Quote and BOM",
+      "demoMode": "working-domain",
+      "status": "Service live",
+      "drop": "P2-D05",
+      "sourceRefs": [
+        {
+          "id": "pro",
+          "locator": "7.3"
+        }
+      ],
+      "label": "Working local demo: package selection and material calculation",
+      "evidence": "evidence/P2-D05.md"
+    },
+    {
+      "id": "quote",
+      "title": "Versioned PLAN quote and approval",
+      "owner": "ARDEX PRO",
+      "consumer": "Homeowner",
+      "demoMode": "working-domain",
+      "status": "Service live",
+      "drop": "P2-D06",
+      "sourceRefs": [
+        {
+          "id": "pro",
+          "locator": "7.4"
+        }
+      ],
+      "label": "Working local demo: Versioned PLAN quote and approval",
+      "exportMark": "DEMO - illustrative values and terms",
+      "evidence": "evidence/P2-D06.md"
+    },
+    {
+      "id": "dealer-kit",
+      "title": "Tagged approved material list",
+      "owner": "Applicator",
+      "consumer": "Dealer",
+      "demoMode": "working-domain",
+      "status": "Service live",
+      "drop": "P2-D07",
+      "sourceRefs": [
+        {
+          "id": "pro",
+          "locator": "M7 partial prototype"
+        }
+      ],
+      "label": "Working local demo: Tagged approved material list",
+      "evidence": "evidence/P2-D07.md"
+    },
+    {
+      "id": "homeowner-messaging",
+      "title": "Homeowner WhatsApp handoffs",
+      "owner": "Sakhaa",
+      "consumer": "Homeowner",
+      "demoMode": "simulated",
+      "status": "Simulated",
+      "drop": "P1-D07",
+      "sourceRefs": [
+        {
+          "id": "base",
+          "locator": "Integrations real API requirement"
+        }
+      ],
+      "label": "Simulated WhatsApp transport; local demo introduction events working",
+      "productionReplacement": "Sakhaa API with approved WhatsApp templates and authenticated callbacks",
+      "evidence": "evidence/P1-D07.md"
+    },
+    {
+      "id": "job-otp",
+      "title": "Purpose bound start and handover codes",
+      "owner": "ARDEX PRO",
+      "consumer": "Sakhaa and homeowner",
+      "demoMode": "simulated",
+      "status": "Simulated",
+      "drop": "P2-D07",
+      "sourceRefs": [
+        {
+          "id": "pro",
+          "locator": "7.7"
+        }
+      ],
+      "label": "Simulated WhatsApp transport; working purpose-bound confirmation rules",
+      "productionReplacement": "Sakhaa API with approved WhatsApp templates and authenticated callbacks",
+      "evidence": "evidence/P2-D07.md"
+    },
+    {
+      "id": "qr-registry",
+      "title": "Per pack identity and scan outcomes",
+      "owner": "Ardex",
+      "consumer": "Counters and gate",
+      "demoMode": "working-domain",
+      "status": "Service live",
+      "drop": "P3-D01",
+      "sourceRefs": [
+        {
+          "id": "pro",
+          "locator": "7.5"
+        }
+      ],
+      "label": "Working local demo: Per pack identity and scan outcomes",
+      "limitation": "Synthetic registry until Ardex packaging and signing capability are confirmed.",
+      "evidence": "evidence/P3-D01.md"
+    },
+    {
+      "id": "camera-capture",
+      "title": "Live browser stage capture",
+      "owner": "Applicator",
+      "consumer": "Stage evidence",
+      "demoMode": "browser-live",
+      "status": "Browser live",
+      "drop": "P3-D02",
+      "sourceRefs": [
+        {
+          "id": "pro",
+          "locator": "7.6"
+        }
+      ],
+      "label": "Working local demo: Live browser stage capture",
+      "limitation": "Camera only reduces ordinary gallery reuse; it is not device integrity or workmanship proof.",
+      "evidence": "evidence/P3-D02.md"
+    },
+    {
+      "id": "stage-rules",
+      "title": "Package sequence and curing guards",
+      "owner": "ARDEX PRO",
+      "consumer": "Applicator",
+      "demoMode": "working-domain",
+      "status": "Service live",
+      "drop": "P3-D02",
+      "sourceRefs": [
+        {
+          "id": "pro",
+          "locator": "7.6"
+        }
+      ],
+      "label": "Working local demo: Package sequence and curing guards",
+      "evidence": "evidence/P3-D02.md"
+    },
+    {
+      "id": "flood-test",
+      "title": "Linked start end evidence and assessment",
+      "owner": "Applicator and supervisor",
+      "consumer": "Gate",
+      "demoMode": "working-domain",
+      "status": "Service live",
+      "drop": "P3-D03",
+      "sourceRefs": [
+        {
+          "id": "pro",
+          "locator": "7.6"
+        }
+      ],
+      "label": "Working local demo: Linked start end evidence and assessment",
+      "evidence": "evidence/P3-D03.md"
+    },
+    {
+      "id": "review-gate",
+      "title": "Six checks and targeted review",
+      "owner": "Ardex",
+      "consumer": "Issuance or corrective work",
+      "demoMode": "working-domain",
+      "status": "Service live",
+      "drop": "P3-D04",
+      "sourceRefs": [
+        {
+          "id": "pro",
+          "locator": "7.8 and 7.9"
+        }
+      ],
+      "label": "Working local demo: Six checks and targeted review",
+      "evidence": "evidence/P3-D04.md"
+    },
+    {
+      "id": "water-passport",
+      "title": "Demo completion and verification record",
+      "owner": "Ardex",
+      "consumer": "Homeowner",
+      "demoMode": "working-domain",
+      "status": "Service live",
+      "drop": "P3-D05",
+      "sourceRefs": [
+        {
+          "id": "pro",
+          "locator": "7.12"
+        }
+      ],
+      "label": "Working local demo: Demo completion and verification record",
+      "exportMark": "DEMO - illustrative values and terms",
+      "evidence": "evidence/P3-D05.md"
+    },
+    {
+      "id": "outcomes",
+      "title": "Value product and points projections",
+      "owner": "ARDEX PRO",
+      "consumer": "Ardex and CHLEAR",
+      "demoMode": "working-domain",
+      "status": "Service live",
+      "drop": "P3-D06",
+      "sourceRefs": [
+        {
+          "id": "pro",
+          "locator": "7.10 7.11 and 13.2"
+        }
+      ],
+      "label": "Working local demo: Value product and points projections",
+      "limitation": "Separate approved value, reported payment, verified collection, and recorded pack quantity.",
+      "evidence": "evidence/P3-D06.md"
+    },
+    {
+      "id": "shared-session",
+      "title": "Independent device synchronization",
+      "owner": "ARDEX PRO",
+      "consumer": "Three role projections",
+      "demoMode": "shared-service",
+      "status": "Service live",
+      "drop": "P1-D07",
+      "sourceRefs": [
+        {
+          "id": "roadmap",
+          "locator": "Runtime modes and dependency spine"
+        }
+      ],
+      "label": "Working local demo: Independent device synchronization",
+      "evidence": "evidence/P1-D07.md"
+    },
+    {
+      "id": "weather",
+      "title": "Seeded advisory",
+      "owner": "ARDEX PRO",
+      "consumer": "Applicator",
+      "demoMode": "simulated",
+      "status": "Simulated",
+      "drop": "P3-D02",
+      "sourceRefs": [
+        {
+          "id": "pro",
+          "locator": "7.13"
+        }
+      ],
+      "label": "Working local demo: Seeded advisory",
+      "evidence": "evidence/P3-D02.md"
+    },
+    {
+      "id": "ai-photo-checks",
+      "title": "Automated workmanship judgment",
+      "owner": "Ardex",
+      "consumer": "Gate",
+      "demoMode": "deferred",
+      "status": "Deferred",
+      "drop": "P3-D08",
+      "sourceRefs": [
+        {
+          "id": "pro",
+          "locator": "A18 Phase 2"
+        }
+      ],
+      "label": "Planned: Automated workmanship judgment"
+    },
+    {
+      "id": "site-coach-voice",
+      "title": "Full local language speech assistant",
+      "owner": "Ardex",
+      "consumer": "Applicator",
+      "demoMode": "deferred",
+      "status": "Deferred",
+      "drop": "P3-D08",
+      "sourceRefs": [
+        {
+          "id": "pro",
+          "locator": "A17 Phase 2"
+        }
+      ],
+      "label": "Planned: Full local language speech assistant"
+    },
+    {
+      "id": "provider-payments",
+      "title": "Verified collections and payouts",
+      "owner": "Commercial owner to confirm",
+      "consumer": "Earnings",
+      "demoMode": "deferred",
+      "status": "Deferred",
+      "drop": "P3-D08",
+      "sourceRefs": [
+        {
+          "id": "pro",
+          "locator": "13.2 Phase 2"
+        }
+      ],
+      "label": "Planned: Verified collections and payouts"
+    },
+    {
+      "id": "live-ad-export",
+      "title": "Actual Meta and Google conversion calls",
+      "owner": "CHLEAR",
+      "consumer": "Ad platforms",
+      "demoMode": "deferred",
+      "status": "Deferred",
+      "drop": "P3-D08",
+      "sourceRefs": [
+        {
+          "id": "pro",
+          "locator": "13.2 Phase 2"
+        }
+      ],
+      "label": "Planned: Actual Meta and Google conversion calls"
+    },
+    {
+      "id": "warranty-claims",
+      "title": "Real claim submission and resolution",
+      "owner": "Ardex",
+      "consumer": "Homeowner",
+      "demoMode": "deferred",
+      "status": "Deferred",
+      "drop": "P3-D08",
+      "sourceRefs": [
+        {
+          "id": "pro",
+          "locator": "A19 Phase 2"
+        }
+      ],
+      "label": "Planned: Real claim submission and resolution"
+    }
+  ],
+  "handoffs": [
+    {
+      "stage": "demand",
+      "owner": "CHLEAR",
+      "output": "Qualified lead and source context",
+      "consumer": "Sakhaa"
+    },
+    {
+      "stage": "nurture",
+      "owner": "Sakhaa",
+      "output": "Booked visit and provisional assessment",
+      "consumer": "ARDEX PRO"
+    },
+    {
+      "stage": "close",
+      "owner": "ARDEX PRO",
+      "output": "Approved job recorded packs evidence and value",
+      "consumer": "Ardex"
+    },
+    {
+      "stage": "supply",
+      "owner": "Dealer",
+      "output": "Tagged supply association; invoice deferred",
+      "consumer": "Applicator and Ardex"
+    },
+    {
+      "stage": "review",
+      "owner": "Ardex",
+      "output": "Gate decision corrective tasks and demo certificate",
+      "consumer": "Applicator and homeowner"
+    },
+    {
+      "stage": "return",
+      "owner": "Sakhaa and CHLEAR",
+      "output": "Future permission eligible service or conversion handoff",
+      "consumer": "Future services"
+    }
+  ],
+  "placeholders": [
+    {
+      "id": "coverage",
+      "owner": "Ardex technical team",
+      "replacementEvidence": "Approved data sheets and confirmed system coverage",
+      "clientApproved": false,
+      "source": "seed"
+    },
+    {
+      "id": "system-contents",
+      "owner": "Ardex technical team",
+      "replacementEvidence": "Signed package BOM and stage method",
+      "clientApproved": false,
+      "source": "seed"
+    },
+    {
+      "id": "prices",
+      "owner": "Ardex commercial team",
+      "replacementEvidence": "Current regional price list and tax policy",
+      "clientApproved": false,
+      "source": "seed"
+    },
+    {
+      "id": "labour",
+      "owner": "Ardex commercial team",
+      "replacementEvidence": "Approved area basis and city labour bands",
+      "clientApproved": false,
+      "source": "seed"
+    },
+    {
+      "id": "curing",
+      "owner": "Ardex technical team",
+      "replacementEvidence": "Approved stage timing and flood test methods",
+      "clientApproved": false,
+      "source": "seed"
+    },
+    {
+      "id": "warranty",
+      "owner": "Ardex legal and parent",
+      "replacementEvidence": "Certificate type liability and approved terms",
+      "clientApproved": false,
+      "source": "seed"
+    },
+    {
+      "id": "pack-codes",
+      "owner": "Ardex packaging and technology",
+      "replacementEvidence": "Unique registry format signing policy and issuance ownership",
+      "clientApproved": false,
+      "source": "pro"
+    },
+    {
+      "id": "certification",
+      "owner": "Ardex Academy",
+      "replacementEvidence": "KYC certification tier and active member policies",
+      "clientApproved": false,
+      "source": "pro"
+    },
+    {
+      "id": "quality",
+      "owner": "Ardex operations",
+      "replacementEvidence": "Missing observation treatment and review windows",
+      "clientApproved": false,
+      "source": "pro"
+    }
+  ],
+  "amendments": [
+    {
+      "id": "AM01",
+      "sourceId": "base",
+      "original": "WhatsApp integration cannot be faked in original prototype",
+      "resolution": "For the reviewed web demo transport is simulated; future Sakhaa replacement remains explicit.",
+      "affectedDrops": [
+        "P1-D07",
+        "P2-D06",
+        "P3-D05"
+      ],
+      "status": "Proposed demo clarification; client policies remain open"
+    },
+    {
+      "id": "AM02",
+      "sourceId": "pro",
+      "original": "One hour equals ten seconds suggests a short full demo",
+      "resolution": "Use a separate explicit advance to next unlock action; do not fabricate evidence.",
+      "affectedDrops": [
+        "P1-D05",
+        "P3-D03"
+      ],
+      "status": "Proposed demo clarification; client policies remain open"
+    },
+    {
+      "id": "AM03",
+      "sourceId": "pro",
+      "original": "Supervisor may approve any failed job with a reason",
+      "resolution": "Proposed restricted categories; unresolved reused packs missing confirmation and structural stops need dedicated correction.",
+      "affectedDrops": [
+        "P3-D04"
+      ],
+      "status": "Proposed demo clarification; client policies remain open"
+    },
+    {
+      "id": "AM04",
+      "sourceId": "schema",
+      "original": "Header quantities mention grams while field comments use SKU units",
+      "resolution": "Proposed demo decimal SKU quantities with explicit boundary conversions; money integer paise.",
+      "affectedDrops": [
+        "P1-D03",
+        "P2-D05"
+      ],
+      "status": "Proposed demo clarification; client policies remain open"
+    },
+    {
+      "id": "AM05",
+      "sourceId": "pro",
+      "original": "Every point inside and ninety percent inside are ambiguous together",
+      "resolution": "Preserve raw location uncertainty and require an explicit reviewed classification policy before gate implementation.",
+      "affectedDrops": [
+        "P3-D04"
+      ],
+      "status": "Proposed demo clarification; client policies remain open"
+    },
+    {
+      "id": "AM06",
+      "sourceId": "pro",
+      "original": "Quote labour basis is not explicitly distinguished",
+      "resolution": "Proposed treated area basis for demo; keep client commercial approval open.",
+      "affectedDrops": [
+        "P2-D05"
+      ],
+      "status": "Proposed demo clarification; client policies remain open"
+    },
+    {
+      "id": "AM07",
+      "sourceId": "proof",
+      "original": "Financial warranty may need a later legal stage",
+      "resolution": "Demo certificate is marked and illustrative; real backing and terms remain client dependent.",
+      "affectedDrops": [
+        "P3-D05"
+      ],
+      "status": "Proposed demo clarification; client policies remain open"
+    }
+  ],
+  "priorities": [
+    {
+      "id": "M01",
+      "rank": 1,
+      "capability": "calculator",
+      "moment": "Change dimensions and inspect actual quantities and pack optimization"
+    },
+    {
+      "id": "M02",
+      "rank": 2,
+      "capability": "quote",
+      "moment": "Homeowner approval freezes one scope across roles"
+    },
+    {
+      "id": "M03",
+      "rank": 3,
+      "capability": "qr-registry",
+      "moment": "Reused pack is blocked without increasing valid quantity"
+    },
+    {
+      "id": "M04",
+      "rank": 4,
+      "capability": "review-gate",
+      "moment": "All six checks explain failure and corrective work"
+    },
+    {
+      "id": "M05",
+      "rank": 5,
+      "capability": "water-passport",
+      "moment": "Inspect the marked completion evidence and issuance record"
+    },
+    {
+      "id": "M06",
+      "rank": 6,
+      "capability": "my-lead",
+      "moment": "Show the same disciplined job for the applicator own customer"
+    },
+    {
+      "id": "M07",
+      "rank": 7,
+      "capability": "outcomes",
+      "moment": "Reconcile approved value receipts dealer and recorded packs"
+    }
+  ]
+}

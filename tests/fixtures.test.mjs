@@ -1,0 +1,4 @@
+import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import {fixtures,validateCatalog,registryFixture}from '../src/data/fixtures.mjs';
+const catalog=JSON.parse(fs.readFileSync(new URL('../config/catalog.json',import.meta.url)));
+test('all seven supplied packages have valid product, stage and pricing references',()=>{assert.equal(catalog.packages.length,7);assert.deepEqual(validateCatalog(catalog),[]);const broken=structuredClone(catalog);broken.packages[0].bom[0].sku='UNKNOWN';assert.ok(validateCatalog(broken).length)});
+test('synthetic people, distinct source modes and registry ownership',()=>{assert.equal(fixtures.terrace.expectedArea,700);assert.equal(fixtures.bathroom.mode,'my-lead');assert.match(fixtures.terrace.customer.phone,/DEMO/);const packs=registryFixture(catalog);assert.equal(packs['DEMO-USED'].consumedBy,'other-demo-job');assert.equal(packs['DEMO-WPM810-20-001'].consumedBy,null)});

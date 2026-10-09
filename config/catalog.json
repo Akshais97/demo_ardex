@@ -1,0 +1,254 @@
+{
+  "_meta": {
+    "name": "ARDEX PRO seed configuration",
+    "version": "1.0.0",
+    "date": "2026-10-02",
+    "warning": "All coverage rates, prices, labour bands, curing gaps and warranty years are PLACEHOLDERS for the prototype. Replace with Ardex technical and commercial data before pilot. Product names are real Ardex Endura products; their use in each package is illustrative until Ardex's technical team confirms the systems.",
+    "units": "money in paise; coverage in SKU unit per sq ft per coat; gaps in minutes; lengths in feet unless suffixed _m"
+  },
+
+  "settings": {
+    "offer_window_minutes": 15,
+    "max_offers_per_lead": 5,
+    "quiet_hours": { "start": "21:00", "end": "08:00", "timezone": "Asia/Kolkata" },
+    "routing_weights": { "quality": 0.5, "tier": 0.2, "distance": 0.2, "fairness": 0.1 },
+    "tier_weights": { "SILVER": 0.33, "GOLD": 0.67, "ELITE": 1.0 },
+    "starter_boost_offers": 5,
+    "max_active_ardex_jobs": 3,
+    "max_radius_km": 15,
+    "site_radius_m": 150,
+    "site_inside_share_min": 0.9,
+    "site_far_limit_m": 1000,
+    "checkin_warn_m": 150,
+    "gps_accuracy_flag_m": 100,
+    "quote_validity_days": 15,
+    "gst_rate": 0.18,
+    "otp_homeowner": { "digits": 6, "validity_minutes": 30, "max_attempts": 5, "resend_after_seconds": 60, "max_resends_per_hour": 3 },
+    "otp_login": { "digits": 6, "validity_minutes": 5, "max_requests_per_15min": 3 },
+    "phash_hamming_threshold": 6,
+    "photo": { "long_edge_px": 1600, "jpeg_quality": 80 },
+    "review_sla_hours": 24,
+    "audit_sample_rate": 0.10,
+    "first_time_pass_bonus": 50,
+    "weather_rain_probability_threshold": 0.6,
+    "weather_lookahead_hours": 6,
+    "payment_reminder_min_days": 3,
+    "quality_score": {
+      "window_jobs": 20,
+      "new_applicator_default": 70,
+      "min_jobs_for_formula": 3,
+      "weights": { "first_time_pass": 0.40, "rating": 0.25, "audit_pass": 0.20, "no_claims": 0.15 }
+    },
+    "tiers": {
+      "SILVER": { "requires": "CERTIFIED" },
+      "GOLD": { "min_warranty_jobs": 10, "min_score": 75 },
+      "ELITE": { "min_warranty_jobs": 30, "min_score": 85 },
+      "downgrade_after_days_below": 30
+    },
+    "demo_mode": { "enabled": false, "allowed_environments": ["local", "staging"], "one_hour_equals_seconds": 10 },
+    "languages": ["en", "hi", "kn"]
+  },
+
+  "cities": [
+    { "code": "BLR", "name": "Bengaluru", "state": "Karnataka" }
+  ],
+
+  "skus": [
+    { "code": "WPM265", "name": "ARDEX WPM 265 Sheltercoat primer", "unit": "L",  "coverage_per_sqft_coat": 0.015, "packs": [ { "size": 5,  "price_paise": 180000 }, { "size": 1, "price_paise": 42000 } ], "points_per_pack": 5,  "quantity_tolerance": 0.10, "placeholder": true },
+    { "code": "WPM004", "name": "ARDEX WPM 004 cementitious waterproof coating", "unit": "KG", "coverage_per_sqft_coat": 0.070, "packs": [ { "size": 20, "price_paise": 240000 }, { "size": 4, "price_paise": 72500 } ], "points_per_pack": 10, "quantity_tolerance": 0.10, "placeholder": true },
+    { "code": "WPM004F", "name": "ARDEX WPM 004 Flex reinforced coating", "unit": "KG", "coverage_per_sqft_coat": 0.075, "packs": [ { "size": 20, "price_paise": 290000 } ], "points_per_pack": 12, "quantity_tolerance": 0.10, "placeholder": true },
+    { "code": "WPM002", "name": "ARDEX WPM 002 two-component under-tile membrane", "unit": "KG", "coverage_per_sqft_coat": 0.080, "packs": [ { "size": 20, "price_paise": 420000 }, { "size": 5, "price_paise": 115000 } ], "points_per_pack": 15, "quantity_tolerance": 0.10, "placeholder": true },
+    { "code": "WPM810", "name": "ARDEX WPM 810 polyurethane membrane", "unit": "KG", "coverage_per_sqft_coat": 0.100, "packs": [ { "size": 20, "price_paise": 560000 }, { "size": 4, "price_paise": 125000 } ], "points_per_pack": 20, "quantity_tolerance": 0.10, "placeholder": true },
+    { "code": "WPM158", "name": "ARDEX WPM 158 high-build polyurethane membrane", "unit": "KG", "coverage_per_sqft_coat": 0.120, "packs": [ { "size": 20, "price_paise": 690000 } ], "points_per_pack": 25, "quantity_tolerance": 0.10, "placeholder": true },
+    { "code": "WPM007R", "name": "ARDEX WPM 007 Roofkote exposed coating", "unit": "L",  "coverage_per_sqft_coat": 0.060, "packs": [ { "size": 20, "price_paise": 380000 }, { "size": 4, "price_paise": 82000 } ], "points_per_pack": 12, "quantity_tolerance": 0.10, "placeholder": true },
+    { "code": "WPT300", "name": "ARDEX WPT 300 series waterproofing tape", "unit": "ROLL", "coverage_per_sqft_coat": null, "roll_length_m": 10, "packs": [ { "size": 1, "price_paise": 95000 } ], "points_per_pack": 5, "quantity_tolerance": 0.0, "placeholder": true },
+    { "code": "MESH",   "name": "Reinforcement fabric [product TBC by Ardex]", "unit": "SQM", "coverage_per_sqft_coat": 0.0929, "packs": [ { "size": 50, "price_paise": 150000 } ], "points_per_pack": 5, "quantity_tolerance": 0.10, "placeholder": true }
+  ],
+
+  "packages": [
+    {
+      "code": "TERRACE_SHIELD", "name": "Terrace Shield", "area_type": "TERRACE", "tier": "GOOD",
+      "description": "Exposed acrylic coating with fabric at cracks and junctions.",
+      "warranty_years": 3, "upturn_ft": 1.0, "duration_days": 2, "placeholder": true,
+      "bom": [
+        { "sku": "WPM007R", "method": "AREA", "coats": 2, "wastage": 0.10 },
+        { "sku": "MESH", "method": "AREA", "coats": 1, "wastage": 0.15, "area_fraction": 0.15 }
+      ],
+      "stages": [
+        { "key": "surface_prep", "seq": 1, "name": "Surface preparation", "shots": 2, "min_gap_minutes": 0 },
+        { "key": "crack_treatment", "seq": 2, "name": "Crack and joint treatment", "shots": 1, "min_gap_minutes": 0, "skus": ["MESH"] },
+        { "key": "coat_1", "seq": 3, "name": "Coat 1", "shots": 2, "min_gap_minutes": 120, "challenge_code": true, "skus": ["WPM007R"] },
+        { "key": "coat_2", "seq": 4, "name": "Coat 2", "shots": 2, "min_gap_minutes": 360 },
+        { "key": "ponding_start", "seq": 5, "name": "Ponding test start", "shots": 1, "min_gap_minutes": 1440, "challenge_code": true, "flood_pair_role": "START" },
+        { "key": "ponding_end", "seq": 6, "name": "Ponding test end", "shots": 1, "min_gap_minutes": 1440, "challenge_code": true, "flood_pair_role": "END" }
+      ],
+      "labour_bands": { "BLR": { "min_per_sqft_paise": 1200, "default_per_sqft_paise": 1600, "max_per_sqft_paise": 2200 } }
+    },
+    {
+      "code": "TERRACE_SHIELD_PLUS", "name": "Terrace Shield Plus", "area_type": "TERRACE", "tier": "BETTER",
+      "description": "Elastomeric polyurethane membrane with primer and reinforcement.",
+      "warranty_years": 5, "upturn_ft": 1.0, "duration_days": 3, "placeholder": true,
+      "bom": [
+        { "sku": "WPM265", "method": "AREA", "coats": 1, "wastage": 0.10 },
+        { "sku": "WPM810", "method": "AREA", "coats": 2, "wastage": 0.10 },
+        { "sku": "MESH", "method": "AREA", "coats": 1, "wastage": 0.15, "area_fraction": 0.15 }
+      ],
+      "stages": [
+        { "key": "surface_prep", "seq": 1, "name": "Surface preparation", "shots": 2, "min_gap_minutes": 0 },
+        { "key": "crack_treatment", "seq": 2, "name": "Crack and joint treatment", "shots": 1, "min_gap_minutes": 0 },
+        { "key": "primer", "seq": 3, "name": "Primer", "shots": 1, "min_gap_minutes": 120, "skus": ["WPM265"] },
+        { "key": "coat_1", "seq": 4, "name": "Coat 1", "shots": 2, "min_gap_minutes": 240, "challenge_code": true, "skus": ["WPM810"] },
+        { "key": "reinforcement", "seq": 5, "name": "Reinforcement fabric", "shots": 1, "min_gap_minutes": 0, "skus": ["MESH"] },
+        { "key": "coat_2", "seq": 6, "name": "Coat 2", "shots": 2, "min_gap_minutes": 720 },
+        { "key": "ponding_start", "seq": 7, "name": "Ponding test start", "shots": 1, "min_gap_minutes": 1440, "challenge_code": true, "flood_pair_role": "START" },
+        { "key": "ponding_end", "seq": 8, "name": "Ponding test end", "shots": 1, "min_gap_minutes": 1440, "challenge_code": true, "flood_pair_role": "END" }
+      ],
+      "labour_bands": { "BLR": { "min_per_sqft_paise": 1800, "default_per_sqft_paise": 2400, "max_per_sqft_paise": 3200 } }
+    },
+    {
+      "code": "TERRACE_SHIELD_MAX", "name": "Terrace Shield Max", "area_type": "TERRACE", "tier": "BEST",
+      "description": "High-build polyurethane system for maximum movement and life.",
+      "warranty_years": 7, "upturn_ft": 1.0, "duration_days": 3, "placeholder": true,
+      "bom": [
+        { "sku": "WPM265", "method": "AREA", "coats": 1, "wastage": 0.10 },
+        { "sku": "WPM158", "method": "AREA", "coats": 2, "wastage": 0.10 },
+        { "sku": "MESH", "method": "AREA", "coats": 1, "wastage": 0.15, "area_fraction": 0.20 }
+      ],
+      "stages": [
+        { "key": "surface_prep", "seq": 1, "name": "Surface preparation", "shots": 2, "min_gap_minutes": 0 },
+        { "key": "crack_treatment", "seq": 2, "name": "Crack and joint treatment", "shots": 1, "min_gap_minutes": 0 },
+        { "key": "primer", "seq": 3, "name": "Primer", "shots": 1, "min_gap_minutes": 120, "skus": ["WPM265"] },
+        { "key": "coat_1", "seq": 4, "name": "Coat 1", "shots": 2, "min_gap_minutes": 240, "challenge_code": true, "skus": ["WPM158"] },
+        { "key": "reinforcement", "seq": 5, "name": "Reinforcement fabric", "shots": 1, "min_gap_minutes": 0, "skus": ["MESH"] },
+        { "key": "coat_2", "seq": 6, "name": "Coat 2", "shots": 2, "min_gap_minutes": 720 },
+        { "key": "ponding_start", "seq": 7, "name": "Ponding test start", "shots": 1, "min_gap_minutes": 1440, "challenge_code": true, "flood_pair_role": "START" },
+        { "key": "ponding_end", "seq": 8, "name": "Ponding test end", "shots": 1, "min_gap_minutes": 1440, "challenge_code": true, "flood_pair_role": "END" }
+      ],
+      "labour_bands": { "BLR": { "min_per_sqft_paise": 2200, "default_per_sqft_paise": 2800, "max_per_sqft_paise": 3800 } }
+    },
+    {
+      "code": "TERRACE_UNDER_TILE", "name": "Terrace Shield (under tile)", "area_type": "TERRACE", "tier": "GOOD",
+      "description": "Reinforced cementitious coating for terraces that will be tiled.",
+      "warranty_years": 3, "upturn_ft": 1.0, "duration_days": 2, "placeholder": true,
+      "bom": [
+        { "sku": "WPM004F", "method": "AREA", "coats": 2, "wastage": 0.10 },
+        { "sku": "WPT300", "method": "LINEAR", "drain_allowance_m": 1.0, "penetration_allowance_m": 0.5 }
+      ],
+      "stages": [
+        { "key": "surface_prep", "seq": 1, "name": "Surface preparation", "shots": 2, "min_gap_minutes": 0 },
+        { "key": "tape", "seq": 2, "name": "Corner, drain and joint tape", "shots": 2, "min_gap_minutes": 0, "skus": ["WPT300"] },
+        { "key": "coat_1", "seq": 3, "name": "Coat 1", "shots": 2, "min_gap_minutes": 0, "challenge_code": true, "skus": ["WPM004F"] },
+        { "key": "coat_2", "seq": 4, "name": "Coat 2", "shots": 2, "min_gap_minutes": 360 },
+        { "key": "ponding_start", "seq": 5, "name": "Ponding test start", "shots": 1, "min_gap_minutes": 1440, "challenge_code": true, "flood_pair_role": "START" },
+        { "key": "ponding_end", "seq": 6, "name": "Ponding test end", "shots": 1, "min_gap_minutes": 1440, "challenge_code": true, "flood_pair_role": "END" }
+      ],
+      "labour_bands": { "BLR": { "min_per_sqft_paise": 1400, "default_per_sqft_paise": 1800, "max_per_sqft_paise": 2400 } }
+    },
+    {
+      "code": "BATH_SEAL", "name": "Bath Seal", "area_type": "BATHROOM", "tier": "GOOD",
+      "description": "Flexible cementitious coating under new tiles, with taped corners.",
+      "warranty_years": 3, "upturn_ft": 1.0, "duration_days": 2, "placeholder": true,
+      "bom": [
+        { "sku": "WPM004", "method": "AREA", "coats": 2, "wastage": 0.10 },
+        { "sku": "WPT300", "method": "LINEAR", "drain_allowance_m": 1.0, "penetration_allowance_m": 0.5 }
+      ],
+      "stages": [
+        { "key": "surface_prep", "seq": 1, "name": "Remove and prepare", "shots": 2, "min_gap_minutes": 0 },
+        { "key": "tape", "seq": 2, "name": "Corner and drain tape", "shots": 2, "min_gap_minutes": 0, "skus": ["WPT300"] },
+        { "key": "coat_1", "seq": 3, "name": "Coat 1", "shots": 2, "min_gap_minutes": 0, "challenge_code": true, "skus": ["WPM004"] },
+        { "key": "coat_2", "seq": 4, "name": "Coat 2", "shots": 2, "min_gap_minutes": 360 },
+        { "key": "flood_start", "seq": 5, "name": "Flood test start", "shots": 1, "min_gap_minutes": 1440, "challenge_code": true, "flood_pair_role": "START" },
+        { "key": "flood_end", "seq": 6, "name": "Flood test end", "shots": 1, "min_gap_minutes": 1440, "challenge_code": true, "flood_pair_role": "END" }
+      ],
+      "labour_bands": { "BLR": { "min_per_sqft_paise": 2500, "default_per_sqft_paise": 3200, "max_per_sqft_paise": 4200 } }
+    },
+    {
+      "code": "BATH_SEAL_PLUS", "name": "Bath Seal Plus", "area_type": "BATHROOM", "tier": "BETTER",
+      "description": "Primer, high-elongation under-tile membrane and taped corners.",
+      "warranty_years": 5, "upturn_ft": 1.0, "duration_days": 3, "placeholder": true,
+      "bom": [
+        { "sku": "WPM265", "method": "AREA", "coats": 1, "wastage": 0.10 },
+        { "sku": "WPM002", "method": "AREA", "coats": 2, "wastage": 0.10 },
+        { "sku": "WPT300", "method": "LINEAR", "drain_allowance_m": 1.0, "penetration_allowance_m": 0.5 }
+      ],
+      "stages": [
+        { "key": "surface_prep", "seq": 1, "name": "Remove and prepare", "shots": 2, "min_gap_minutes": 0 },
+        { "key": "primer", "seq": 2, "name": "Primer", "shots": 1, "min_gap_minutes": 0, "skus": ["WPM265"] },
+        { "key": "tape", "seq": 3, "name": "Corner and drain tape", "shots": 2, "min_gap_minutes": 120, "skus": ["WPT300"] },
+        { "key": "coat_1", "seq": 4, "name": "Coat 1", "shots": 2, "min_gap_minutes": 0, "challenge_code": true, "skus": ["WPM002"] },
+        { "key": "coat_2", "seq": 5, "name": "Coat 2", "shots": 2, "min_gap_minutes": 360 },
+        { "key": "flood_start", "seq": 6, "name": "Flood test start", "shots": 1, "min_gap_minutes": 1440, "challenge_code": true, "flood_pair_role": "START" },
+        { "key": "flood_end", "seq": 7, "name": "Flood test end", "shots": 1, "min_gap_minutes": 1440, "challenge_code": true, "flood_pair_role": "END" }
+      ],
+      "labour_bands": { "BLR": { "min_per_sqft_paise": 3000, "default_per_sqft_paise": 3800, "max_per_sqft_paise": 5000 } }
+    },
+    {
+      "code": "BATH_SEAL_MAX", "name": "Bath Seal Max", "area_type": "BATHROOM", "tier": "BEST",
+      "description": "Polyurethane membrane system for maximum movement tolerance.",
+      "warranty_years": 7, "upturn_ft": 1.0, "duration_days": 3, "placeholder": true,
+      "bom": [
+        { "sku": "WPM265", "method": "AREA", "coats": 1, "wastage": 0.10 },
+        { "sku": "WPM810", "method": "AREA", "coats": 2, "wastage": 0.10 },
+        { "sku": "WPT300", "method": "LINEAR", "drain_allowance_m": 1.0, "penetration_allowance_m": 0.5 }
+      ],
+      "stages": [
+        { "key": "surface_prep", "seq": 1, "name": "Remove and prepare", "shots": 2, "min_gap_minutes": 0 },
+        { "key": "primer", "seq": 2, "name": "Primer", "shots": 1, "min_gap_minutes": 0, "skus": ["WPM265"] },
+        { "key": "tape", "seq": 3, "name": "Corner and drain tape", "shots": 2, "min_gap_minutes": 120, "skus": ["WPT300"] },
+        { "key": "coat_1", "seq": 4, "name": "Coat 1", "shots": 2, "min_gap_minutes": 0, "challenge_code": true, "skus": ["WPM810"] },
+        { "key": "coat_2", "seq": 5, "name": "Coat 2", "shots": 2, "min_gap_minutes": 720 },
+        { "key": "flood_start", "seq": 6, "name": "Flood test start", "shots": 1, "min_gap_minutes": 1440, "challenge_code": true, "flood_pair_role": "START" },
+        { "key": "flood_end", "seq": 7, "name": "Flood test end", "shots": 1, "min_gap_minutes": 1440, "challenge_code": true, "flood_pair_role": "END" }
+      ],
+      "labour_bands": { "BLR": { "min_per_sqft_paise": 3500, "default_per_sqft_paise": 4400, "max_per_sqft_paise": 5800 } }
+    }
+  ],
+
+  "decision_rules": {
+    "version": 1,
+    "rules": [
+      { "area_type": "TERRACE", "priority": 10, "conditions": { "structural_flag": true }, "blocking_message": "This needs an Ardex technical visit before waterproofing." },
+      { "area_type": "TERRACE", "priority": 20, "conditions": { "to_be_tiled": true }, "good": "TERRACE_UNDER_TILE", "better": "TERRACE_SHIELD_PLUS", "best": null, "recommended": "BETTER" },
+      { "area_type": "TERRACE", "priority": 30, "conditions": { "to_be_tiled": false }, "good": "TERRACE_SHIELD", "better": "TERRACE_SHIELD_PLUS", "best": "TERRACE_SHIELD_MAX", "recommended": "BETTER" },
+      { "area_type": "BATHROOM", "priority": 10, "conditions": { "structural_flag": true }, "blocking_message": "This needs an Ardex technical visit before waterproofing." },
+      { "area_type": "BATHROOM", "priority": 20, "conditions": { "tiles_removed": "NO" }, "blocking_message": "Tile removal is needed for a warrantable job." },
+      { "area_type": "BATHROOM", "priority": 30, "conditions": {}, "good": "BATH_SEAL", "better": "BATH_SEAL_PLUS", "best": "BATH_SEAL_MAX", "recommended": "BETTER" }
+    ]
+  },
+
+  "structural_flag_rules": {
+    "TERRACE": ["cracks:WIDE", "cracks:DIAGONAL", "exposed_steel:YES", "spalling:YES"],
+    "BATHROOM": ["ceiling_below:SAG", "ceiling_below:SPALLING", "cracks:WIDE"]
+  },
+
+  "checklists": {
+    "TERRACE": [
+      { "key": "surface", "type": "single", "options": ["BARE_CONCRETE", "OLD_TILES", "OLD_COATING", "SCREED"] },
+      { "key": "coating_condition", "type": "single", "options": ["NONE", "SOUND", "PEELING"] },
+      { "key": "cracks", "type": "single", "options": ["NONE", "HAIRLINE", "WIDE", "DIAGONAL"] },
+      { "key": "ponding_after_rain", "type": "bool" },
+      { "key": "slope_ok", "type": "bool" },
+      { "key": "to_be_tiled", "type": "bool" },
+      { "key": "exposed_steel", "type": "bool_yes_no" },
+      { "key": "spalling", "type": "bool_yes_no" }
+    ],
+    "BATHROOM": [
+      { "key": "tiles_removed", "type": "single", "options": ["YES", "NO", "PARTLY"] },
+      { "key": "membrane_visible", "type": "bool" },
+      { "key": "cracks", "type": "single", "options": ["NONE", "HAIRLINE", "WIDE"] },
+      { "key": "leak_below", "type": "bool" },
+      { "key": "ceiling_below", "type": "single", "options": ["OK", "DAMP", "SAG", "SPALLING"] },
+      { "key": "moisture_reading", "type": "number", "optional": true }
+    ]
+  },
+
+  "diagnosis_photos": {
+    "TERRACE": ["wide_view", "worst_area_closeup", "drain", "parapet_junction"],
+    "BATHROOM": ["floor_wide", "wall_floor_corner", "drain", "damage_below"]
+  },
+
+  "whatsapp_templates": [
+    "applicator_assigned", "my_lead_intro", "visit_reminder", "quote_ready", "quote_approved",
+    "otp_start", "otp_close", "rating_request", "passport_issued", "job_review_notice", "payment_reminder"
+  ]
+}

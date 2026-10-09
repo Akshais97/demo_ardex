@@ -1,0 +1,3 @@
+// Presentation only: never rewrite authority records, identifiers, hashes or capture bytes.
+export function cleanCopy(text:string){return text.replace(/\s*\(demo\)/gi,'').replace(/\bdemo\s+/gi,'').replace(/\bdemonstration\b/gi,'reference').trim();}
+export function presentState(state:any){const s={...state};if(s.customer)s.customer={...s.customer,name:cleanCopy(s.customer.name||''),address:cleanCopy(s.customer.address||'')};if(s.profile)s.profile={...s.profile,name:cleanCopy(s.profile.name||''),scoreReason:cleanCopy(s.profile.scoreReason||'')};if(s.messages)s.messages=s.messages.map((m:any)=>({...m,text:cleanCopy(m.text||'')}));return s;}

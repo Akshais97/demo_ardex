@@ -1,0 +1,120 @@
+{
+  "captured": "2026-10-02",
+  "files": [
+    {
+      "path": "Ardex Applicator App — Prototype Feature Spec.pdf",
+      "bytes": 379288,
+      "sha256": "1312e560ee57204c4cf77bff52509b0f3498fde7d68b9b0c2c9830843133c1b9"
+    },
+    {
+      "path": "Ardex Endura - Deep Research Dossier (Part 2).docx",
+      "bytes": 25339,
+      "sha256": "9fbc23ad31396acbe94b581b8e02a9d510fcc8125eed4a2ee7478a3695a8fef5"
+    },
+    {
+      "path": "Ardex Endura - Pitch Research Dossier (Part 1).docx",
+      "bytes": 179439,
+      "sha256": "527caeb6761a7503460e6d57f5e7961d6a6255197c68a52694041fd633b00df1"
+    },
+    {
+      "path": "Ardex Endura- Waterproofing Campaign Brief.pdf",
+      "bytes": 753433,
+      "sha256": "48f817e51f900c92ccc06c57a3112628b8cdc6924c7332cc9577c4e06fe77f74"
+    },
+    {
+      "path": "pitch_product_01/ARDEX PROOF - Architecture.png",
+      "bytes": 527655,
+      "sha256": "85d6f9a27b6a94529512ea2cd03f4a0e0eb8e605c69cf98c5f4a6cc562e9a250"
+    },
+    {
+      "path": "pitch_product_01/ARDEX PROOF - Job Flow.png",
+      "bytes": 225230,
+      "sha256": "5fb4f2712641cd59676bff0ddee04a83b135604296673253904828d37827f363"
+    },
+    {
+      "path": "pitch_product_01/ARDEX PROOF - Product Concept & Build Spec.docx",
+      "bytes": 724571,
+      "sha256": "a9cb1cfb8313b4d4a50c50fff88a305cefcb876ca31d52fb71f9f679d5e20e9f"
+    },
+    {
+      "path": "pitch_product_01/ARDEX PROOF - Product Concept & Build Spec.pdf",
+      "bytes": 514848,
+      "sha256": "718d9196bc7057d493c686ba48d824f384768b0b945a895a88239ea097539b6b"
+    },
+    {
+      "path": "pitch_product_02/ARDEX PLAN - Architecture.png",
+      "bytes": 449900,
+      "sha256": "c6059b3cb7f34a3e856cb195c5b516f685be0d2814ea345a14d85b2d6b14ce40"
+    },
+    {
+      "path": "pitch_product_02/ARDEX PLAN - How a Plan is Made.png",
+      "bytes": 109871,
+      "sha256": "f1c32424a22e3b904ef0023364e59ce45840077564e3848e155f9d747e15b87f"
+    },
+    {
+      "path": "pitch_product_02/ARDEX PLAN - Product Concept & Build Spec.docx",
+      "bytes": 1013166,
+      "sha256": "9f8c683d1458218c08322c646888523aba2c96432c8060cc815319f430aca2cb"
+    },
+    {
+      "path": "pitch_product_02/ARDEX PLAN - Product Concept & Build Spec.pdf",
+      "bytes": 827002,
+      "sha256": "2160cfcf106d49aeaabe6661151f5680708e33a45cb482c9e74b583f79433679"
+    },
+    {
+      "path": "pitch_product_02/ARDEX PLAN - Sample Plan.png",
+      "bytes": 504297,
+      "sha256": "144b538bf3136b99ad0762169bad97ccc21f56a536be7809a606f6d94c22e79d"
+    },
+    {
+      "path": "pitch_product_03/Architecture.png",
+      "bytes": 428959,
+      "sha256": "9032342f9dec89781dd64d216c253d67c10acac6e7bae84fe3032029fe216718"
+    },
+    {
+      "path": "pitch_product_03/Ardex Applicator App — Prototype Feature Spec.pdf",
+      "bytes": 379288,
+      "sha256": "1312e560ee57204c4cf77bff52509b0f3498fde7d68b9b0c2c9830843133c1b9"
+    },
+    {
+      "path": "pitch_product_03/ARDEX PRO - Product & Technical Specification v1.0.docx",
+      "bytes": 1130167,
+      "sha256": "47761af450b58ee708abcc17b48056ebf2ba140632b5cf248f64d1a0ac3aff54"
+    },
+    {
+      "path": "pitch_product_03/ARDEX PRO - Product & Technical Specification v1.0.pdf",
+      "bytes": 1407649,
+      "sha256": "6d734b4aa77c1d6c6df795d3d1dc16f15be35cd3bdaa3c4b3221bea64fd2b879"
+    },
+    {
+      "path": "pitch_product_03/Job Status.png",
+      "bytes": 262837,
+      "sha256": "61ae85115e4a3af993a27b3c0eabcdea1448727a671538cbd712d914cbb96065"
+    },
+    {
+      "path": "pitch_product_03/Lead Routing.png",
+      "bytes": 191220,
+      "sha256": "6f8ccf13179783d90f262121cfad0d0127f77e1897d24203b13205480f40f825"
+    },
+    {
+      "path": "pitch_product_03/openapi.yaml",
+      "bytes": 62063,
+      "sha256": "ed7fd0f0d7926acece8ded99dc9598a819f847bcb3916fd792e2cb3ff56fab0e"
+    },
+    {
+      "path": "pitch_product_03/schema.sql",
+      "bytes": 31861,
+      "sha256": "f24f4aaf5ee193100c508cec4de6bf2dca9e0d23888f1579c5d95c034a32ff0b"
+    },
+    {
+      "path": "pitch_product_03/seed-config.json",
+      "bytes": 18724,
+      "sha256": "8595c29546a0233a7e0febee0ac619c4195b65d77cd96102d59f3083e049b864"
+    },
+    {
+      "path": "pitch_product_03/Warranty Gate.png",
+      "bytes": 269903,
+      "sha256": "42e3491a3393a155b8098b7cea25ba1ecbb3b331426aae7018a4216cc2608582"
+    }
+  ]
+}

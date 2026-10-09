@@ -1,0 +1,8 @@
+import {requireRule,message}from './authority.mjs';import {createJob}from './leads.mjs';import {fixtures}from '../data/fixtures.mjs';
+export const myLeadHandlers={CREATE_MY_LEAD:(s,p,a)=>{
+ requireRule(a==='applicator'&&s.profile.loggedIn,'LOGIN_REQUIRED','Sign in first');requireRule(!s.job,'JOB_EXISTS','A job is already active in this scenario');
+ requireRule(typeof p.name==='string'&&p.name.trim().length>=2&&p.name.length<=80,'CUSTOMER_NAME','Enter customer name');requireRule(/^(DEMO-\d{4}|[6-9]\d{9})$/.test(p.phone||''),'CUSTOMER_PHONE','Enter a 10-digit Indian mobile or DEMO-0002');
+ requireRule(typeof p.address==='string'&&p.address.trim().length>=8&&p.address.length<=200,'CUSTOMER_ADDRESS','Enter a site address with at least 8 characters');requireRule(p.serviceConsent===true,'CONSENT_REQUIRED','Confirm service contact permission');
+ const candidate=s.customerHistory?.find(c=>c.phone===p.phone);requireRule(!candidate||p.duplicateChoice==='new-site','CUSTOMER_CANDIDATE','Matching contact found; confirm a separate new site rather than merging properties');
+ const f=structuredClone(fixtures[p.areaType==='TERRACE'?'terrace':'bathroom']);f.customer={name:p.name.trim(),phone:p.phone,address:p.address.trim(),city:'Bengaluru'};createJob(s,f,'my-lead');s.customer.consent={purpose:'service',source:'applicator-attestation',at:s.clock.now,homeownerAcknowledged:false};s.customerHistory=[...(s.customerHistory||[]),{id:s.customer.id,phone:p.phone,address:p.address}];message(s,'introduction',`${s.profile.name} has added your waterproofing visit. This is your applicator's customer relationship; marketing permission is off.`,{jobId:s.job.id});
+}};
