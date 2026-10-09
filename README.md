@@ -4,6 +4,8 @@ Local prototype for the CHLEAR demand -> Sakhaa nurture -> ARDEX PRO close and p
 
 ## Repository reference guides
 
+- [Railway deployment instructions](docs/RAILWAY-DEPLOYMENT.md)
+
 - [Running localhost URLs and admin credentials](LOCALHOST-ADMIN-ACCESS.md)
 
 - [Tech stack summary](docs/TECH-STACK.md)
@@ -38,7 +40,7 @@ Roles are checked in the local service. Editing a tab or the actor field does no
 
 ## Launch on this laptop
 
-Node 26.7+ is required for the built-in SQLite runtime. Dependencies are already installed.
+Node 24+ is required for the built-in SQLite runtime. Install dependencies with `pnpm install --frozen-lockfile` before building.
 
 Development: `npm run demo` starts the service on 5174, phones on 5173, control on 5175. Open `/admin.html` on the control port.
 

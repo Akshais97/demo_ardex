@@ -12,7 +12,8 @@
     "demo": "node scripts/start-demo.mjs",
     "demo:preview": "node scripts/start-demo.mjs --preview",
     "admin": "vite --host 127.0.0.1 --port 5175 --strictPort --open /admin.html",
-    "qr:stickers": "node scripts/qr-stickers.mjs"
+    "qr:stickers": "node scripts/qr-stickers.mjs",
+    "start": "node server/index.mjs"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.2.0",
